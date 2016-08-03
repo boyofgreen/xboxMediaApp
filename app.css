@@ -24,6 +24,20 @@ body{
     justify-content: flex-end;
 
 }
+.movieListing{
+     display: flex;
+     padding-top: 2em;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+    
+}
+.movieBox {
+    width: 243px;
+    height: 132px;
+    background-color:#32474F; 
+    margin: 2em;
+}
 .heroBox .controls{
     width:20em;
 }

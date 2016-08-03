@@ -1,3 +1,21 @@
+ 
+ 
+ 
+ var data = [
+   {title:"a", id:1},
+   {title:"b", id:2},
+   {title:"c", id:3},
+   {title:"d", id:4},
+   {title:"e", id:5},
+   {title:"f", id:7},
+   {title:"g", id:8},
+   {title:"h", id:9},
+   {title:"i", id:10},
+   {title:"j", id:11},
+   {title:"k", id:12},
+   {title:"l", id:13},
+   ]
+ 
     
 var HeroBox = React.createClass({
   render: function() {
@@ -13,11 +31,31 @@ var HeroBox = React.createClass({
   }
 });
 
-var SelectionSection = React.createClass({
-  render: function() {
+var MovieBox = React.createClass({
+  render: function(){
+    return(
+      <div className="movieBox" id={this.props.id} title={this.props.title}>
+       
+      </div>
+    )
+  }
+});
+
+
+var MovieListing = React.createClass({
+    render: function() {
+      var movieNodes = this.props.data.map(function(data) {
+      return (
+        
+          <MovieBox title={data.title} key={data.id} id={data.id} />
+        
+      );
+    });
+
     return (
-      <div className="selectionSection">
-       <h2>This is the selection box!</h2>
+      <div className="movieListing">
+       {movieNodes}
+       
       </div>
     );
   }
@@ -32,7 +70,7 @@ var PageWrapper = React.createClass({
         <HeroBox />
         </div>
         <div className="bottomSection">
-            This is the bottom section !
+            <MovieListing data={this.props.data} />
         </div>
       </div>
     );
@@ -43,6 +81,6 @@ var PageWrapper = React.createClass({
 
 
 ReactDOM.render(
-  <PageWrapper />,
+  <PageWrapper data={data} />,
   document.getElementById('page')
 );
