@@ -1,0 +1,37 @@
+body{
+    background-color: #1F213A;
+    color: white;
+     font-family: 'Bitter', serif;
+    
+    
+}
+
+#page {
+    display: flex; 
+     flex-direction: column;
+     flex-wrap: nowrap ;
+     align-items: stretch;
+     align-content: space-between;
+}
+.heroBox {
+    height: 23em;
+    padding: 5em;
+    background-image:url('images/hero1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+.heroBox .controls{
+    width:20em;
+}
+.bottomSection{
+    flex-grow: 1;
+    height:100%;
+}
+
+
+
+x#page div { border: 1px solid green}
