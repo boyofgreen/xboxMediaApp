@@ -133,6 +133,74 @@ var MovieListing = React.createClass({
     );
   }
 });
+
+var PlayMovie = React.createClass({
+  render: function(){
+    return(
+      <div className="playMovie">
+      <h2>This is a move plying</h2>
+      </div>
+    )
+  }
+});
+    
+class TopSection extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      viewer: 'frontPage'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  };
+    handleClick() {
+    this.setState({viewer: 'playMovie'});
+  }
+  render() {
+   if (this.state.viewer === 'frontPage'){
+          return(
+      <div className="topSection" onClick={this.handleClick}>
+      <HeroBox />
+      </div>
+    )
+    }else{
+      
+             return(
+      <div className="topSection">
+      <PlayMovie />
+      </div>
+    )   
+    
+   }
+
+  }
+};
+
+
+// class LikeButton extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       viewer: 'frontPage'
+//     };
+//     this.handleClick = this.handleClick.bind(this);
+//   }
+//   handleClick() {
+//     this.setState({liked: !this.state.liked});
+//   }
+//   render() {
+//     const text = this.state.liked ? 'liked' : 'haven\'t liked';
+//     return (
+//       <div onClick={this.handleClick}>
+//         You {text} this. Click to toggle.
+//       </div>
+//     );
+//   }
+// }
+
+
+
+
+
     
 var PageWrapper = React.createClass({
   render: function() {
@@ -140,7 +208,7 @@ var PageWrapper = React.createClass({
       <div className="pageWrapper">
         <div className="logoBox"></div>
         <div className="topSection">
-        <HeroBox />
+        <TopSection />
         </div>
         <div className="bottomSection">
             <MovieListing data={this.props.data} />
