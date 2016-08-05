@@ -5,13 +5,16 @@
 @viewport {
   width: 700px;
 }
+
+
+
 }
 body{
     background-color: #1F213A;
     color: white;
      font-family: 'Bitter', serif;
      touch-action: pan-y;
-    
+    -ms-overflow-style: none;
     
 }
 
@@ -40,11 +43,15 @@ body{
      flex-direction: column;
     
 }
+.movieBoxContainer{
+    padding:20px;
+}
 .movieBox {
     width: 243px;
     height: 132px;
     background-color:#32474F; 
-    margin: 2em;
+    margin-bottom: 5px;
+    flex-shrink:0;
 }
 .heroBox .controls{
     width:20em;
@@ -61,15 +68,28 @@ body{
      display: flex;
      padding-top: 2em;
      flex-direction: row;
-    overflow-x: hidden;
-    overflow-y:scroll;
+    overflow-x: scroll;
+    overflow-y:hidden;
     width:200%;
      justify-content: left;
+    
      
 }
 
 .movieSection:nth-of-type(even) {
   background-color:#283444;
 } 
+
+.movieSection:nth-of-type(even) .movieBoxContainer:first-child .movieBox{
+    width: 486px;
+    height: 264px;
+}
+.movieSection:nth-of-type(even) .list{
+    flex-direction: column;
+    max-height:500px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    
+}
 
 x#page div { border: 1px solid green}
