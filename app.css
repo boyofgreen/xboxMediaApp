@@ -1,7 +1,16 @@
+@media screen and (min-width: 200px) {
+@-ms-viewport {
+  width: 700px;
+}
+@viewport {
+  width: 700px;
+}
+}
 body{
     background-color: #1F213A;
     color: white;
      font-family: 'Bitter', serif;
+     touch-action: pan-y;
     
     
 }
@@ -27,9 +36,8 @@ body{
 .movieListing{
      display: flex;
      padding-top: 2em;
-     flex-direction: row;
-     flex-wrap: wrap;
      justify-content: center;
+     flex-direction: column;
     
 }
 .movieBox {
@@ -45,7 +53,23 @@ body{
     flex-grow: 1;
     height:100%;
 }
+.movieSection{
+    overflow:hidden;
+}
 
+.movieSection .list{
+     display: flex;
+     padding-top: 2em;
+     flex-direction: row;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    width:200%;
+     justify-content: left;
+     
+}
 
+.movieSection:nth-of-type(even) {
+  background-color:#283444;
+} 
 
 x#page div { border: 1px solid green}
