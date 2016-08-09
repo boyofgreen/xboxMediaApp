@@ -64,16 +64,23 @@
    {title:"e", id:50}
  ]}
    ]
+   
+ //custom events
+ var loadMoviePage = new CustomEvent('loadMoviePage');
+ var playMovieFullScreen = new CustomEvent('playMovieFullScreen');
  
     
 var HeroBox = React.createClass({
+  handleClick() {
+    document.dispatchEvent(loadMoviePage)
+  },
   render: function() {
     return (
       <div className="heroBox">
       <div className="controls">
             <h1>Galaxy Explorer</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum. </p>
-                <button>play</button>   
+                <button onClick={this.handleClick}>play</button>   
         </div>
       </div>
     );
@@ -81,10 +88,13 @@ var HeroBox = React.createClass({
 });
 
 var MovieBox = React.createClass({
+    handleClick: function() {
+    document.dispatchEvent(loadMoviePage)
+  },
   render: function(){
     return(
       <div className="movieBoxContainer">
-        <div className="movieBox" id={this.props.id} title={this.props.title}></div>
+        <div className="movieBox" id={this.props.id} title={this.props.title} onClick={this.handleClick}></div>
         {this.props.title}
       </div>
       
@@ -138,7 +148,22 @@ var PlayMovie = React.createClass({
   render: function(){
     return(
       <div className="playMovie">
-      <h2>This is a move plying</h2>
+        <div className="moviePlayer"></div>
+        <div className="movieText">
+            <h2>Mystery Man</h2>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum.</p>
+        </div>
+      </div>
+    )
+  }
+});
+
+var PlayMovieDetails = React.createClass({
+  render:function(){
+    return(
+      <div className="movieText">
+            <h2>Mystery Man</h2>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum.</p>
       </div>
     )
   }
@@ -150,52 +175,61 @@ class TopSection extends React.Component {
     this.state = {
       viewer: 'frontPage'
     };
-    this.handleClick = this.handleClick.bind(this);
-  };
-    handleClick() {
-    this.setState({viewer: 'playMovie'});
+  //   this.handleClick = this.handleClick.bind(this);
+   };
+  //   handleClick() {
+  //   this.setState({viewer: 'playMovie'});
+  // }
+  componentDidMount(){
+    var that = this;
+    document.addEventListener('loadMoviePage', function(){
+      that.setState({viewer: 'playMovie'});
+    })
   }
   render() {
    if (this.state.viewer === 'frontPage'){
           return(
-      <div className="topSection" onClick={this.handleClick}>
+      <div className="topSection" >
       <HeroBox />
       </div>
     )
     }else{
-      
-             return(
+      return(
       <div className="topSection">
       <PlayMovie />
       </div>
-    )   
-    
-   }
+    )}
+  }};
 
+class BottomSection extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      viewer: 'frontPage'
+    };
+   };
+
+  componentDidMount(){
+    var that = this;
+    document.addEventListener('loadMoviePage', function(){
+      window.scrollTo(0, 0);
+      that.setState({viewer: 'playMovie'});
+    })
   }
-};
-
-
-// class LikeButton extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       viewer: 'frontPage'
-//     };
-//     this.handleClick = this.handleClick.bind(this);
-//   }
-//   handleClick() {
-//     this.setState({liked: !this.state.liked});
-//   }
-//   render() {
-//     const text = this.state.liked ? 'liked' : 'haven\'t liked';
-//     return (
-//       <div onClick={this.handleClick}>
-//         You {text} this. Click to toggle.
-//       </div>
-//     );
-//   }
-// }
+  render() {
+   if (this.state.viewer === 'frontPage'){
+          return(
+      <div className="bottomSection" >
+      <MovieListing data={this.props.data} />
+      </div>
+    )
+    }else{
+      return(
+      <div className="bottomSection">
+      <PlayMovieDetails />
+      </div>
+    )}
+  }};
 
 
 
@@ -210,9 +244,7 @@ var PageWrapper = React.createClass({
         <div className="topSection">
         <TopSection />
         </div>
-        <div className="bottomSection">
-            <MovieListing data={this.props.data} />
-        </div>
+        <BottomSection data={this.props.data} />
       </div>
     );
   }
