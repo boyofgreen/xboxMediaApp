@@ -12,7 +12,7 @@
 body{
     background-color: #1F213A;
     color: white;
-     font-family: 'Bitter', serif;
+     font-family: 'SegoeUIMonoW01-Regular';
      touch-action: pan-y;
     -ms-overflow-style: none;
     
@@ -34,7 +34,7 @@ body{
     height: 25em;
     padding: 5em;
     
-    background-image:url('images/hero1.png');
+    background-image:url('http://adx.metulev.com/video/Images/Clean/Large/FeaturedImage_2x1_Image04.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -58,6 +58,7 @@ body{
     background-color:#32474F; 
     margin-bottom: 5px;
     flex-shrink:0;
+    background-size: cover;
 }
 .heroBox .controls{
     width:20em;
@@ -82,15 +83,18 @@ body{
      
 }
 
-.movieSection:nth-of-type(even) {
+.movieSection:nth-of-type(2), .movieSection:nth-of-type(5) {
   background-color:#283444;
 } 
+.movieSection:nth-of-type(4){
+  background-color:#2f404b;
+} 
 
-.movieSection:nth-of-type(even) .movieBoxContainer:first-child .movieBox{
+.movieSection:nth-of-type(2) .movieBoxContainer:first-child .movieBox, .movieSection:nth-of-type(5) .movieBoxContainer:first-child .movieBox{
     width: 486px;
     height: 264px;
 }
-.movieSection:nth-of-type(even) .list{
+.movieSection:nth-of-type(2) .list, .movieSection:nth-of-type(5) .list{
     flex-direction: column;
     max-height:500px;
     flex-wrap: wrap;
@@ -111,8 +115,14 @@ body{
     width:778px;
     background-color: black;
      flex-shrink:0;
+     background-size: contain;
     
 }
 .movieText {
    padding: 5em; 
+}
+
+.controls button{
+    background-color: #32474F;
+ font-family: "Wingdings 3"
 }
