@@ -261,14 +261,26 @@ class BottomSection extends React.Component {
 
 
 
-
+var LogoBox = React.createClass({
+  render: function() {
+    return (
+      <div className="logoBox">
+      <img src="http://adx.metulev.com/video/Logo/Logo_NoText.png" className="logo" />
+      <div>Film</div>
+      <div>Broadcast</div>
+      <div>Commercials</div>
+      <img src="" className="search" />
+      </div>
+    )
+  }
+});
 
     
 var PageWrapper = React.createClass({
   render: function() {
     return (
       <div className="pageWrapper">
-        <div className="logoBox"></div>
+        <LogoBox />
         <div className="topSection">
         <TopSection />
         </div>
