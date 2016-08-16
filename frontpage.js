@@ -110,7 +110,7 @@ var MovieBox = React.createClass({
   render: function(){
     return(
       <div className="movieBoxContainer">
-        <div className="movieBox" id={this.props.id} title={this.props.title} onClick={this.handleClick} style={{backgroundImage: 'url('+this.props.imgUrl+')'}}></div>
+        <button className="movieBox" id={this.props.id} title={this.props.title} onClick={this.handleClick} style={{backgroundImage: 'url('+this.props.imgUrl+')'}}></button>
         {this.props.title}
       </div>
       
@@ -168,6 +168,7 @@ var PlayMovie = React.createClass({
         <div className="movieText">
             <h2>{this.props.data.title}</h2>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum.</p>
+           <p className="playInfo">2008  |  1 hr 51 min</p>
         </div>
       </div>
     )
@@ -185,6 +186,24 @@ var PlayMovieDetails = React.createClass({
     )
   }
 });
+
+var PlayMoveAdditional = React.createClass({
+  render: function(){
+    return(
+      <div className="additionalDetailWrapper">
+        <h4>Additional Details</h4>
+        <div className="lowerDetailsWrapper">
+          <div className="detailBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus</div>
+          <div className="detailBlock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus</div>
+        </div>
+      </div>
+      
+    )
+    
+  }
+  
+  
+})
     
 class TopSection extends React.Component {
   constructor() {
@@ -254,7 +273,7 @@ class BottomSection extends React.Component {
     }else{
       return(
       <div className="bottomSection">
-      <PlayMovieDetails data={currentPlayObj} />
+      <PlayMoveAdditional data={currentPlayObj} />
       </div>
     )}
   }};

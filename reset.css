@@ -43,7 +43,7 @@ table {
 }
 
 
-h1, h2, h3 { font-size: 2em; line-height: 2em}
+h1, h2, h3 { font-size: 24pt;}
 p {line-height: 1.25em; margin-bottom: 1.5em;}
 
 button{ background: none; 
