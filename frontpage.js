@@ -95,7 +95,7 @@ var HeroBox = React.createClass({
       <div className="heroBox">
       <div className="controls">
             <h1>Galaxy Explorer</h1>
-                <button onClick={this.handleClick} ><span className="arrow-right">w</span></button>   
+                <button onClick={this.handleClick} ><span className="arrow-right">▷</span></button>   
         </div>
       </div>
     );
@@ -110,7 +110,7 @@ var MovieBox = React.createClass({
   render: function(){
     return(
       <div className="movieBoxContainer">
-        <button className="movieBox" id={this.props.id} title={this.props.title} onClick={this.handleClick} style={{backgroundImage: 'url('+this.props.imgUrl+')'}}></button>
+        <button className="movieBox" id={this.props.id} title={this.props.title} onClick={this.handleClick} style={{backgroundImage: 'url('+this.props.imgUrl+')'}}><span></span></button>
         {this.props.title}
       </div>
       
@@ -134,6 +134,7 @@ var MovieSection = React.createClass({
        <div className="list">
        {movieSectionNodes}
        </div>
+       <button className="overArrow">❯</button>
       </div>
     )
   }
@@ -167,7 +168,7 @@ var PlayMovie = React.createClass({
         <div className="moviePlayer" style={{backgroundImage: 'url('+this.props.data.imgUrl+')'}}></div>
         <div className="movieText">
             <h2>{this.props.data.title}</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum.</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Cras ullamcorper a odio non rutrum.</p>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod.</p>
 
            <p className="playInfo">2008  |  1 hr 51 min</p>
