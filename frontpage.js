@@ -168,6 +168,8 @@ var PlayMovie = React.createClass({
         <div className="movieText">
             <h2>{this.props.data.title}</h2>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum.</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod.</p>
+
            <p className="playInfo">2008  |  1 hr 51 min</p>
         </div>
       </div>
@@ -182,6 +184,7 @@ var PlayMovieDetails = React.createClass({
       <div className="movieText">
             <h2>{this.props.data.title}</h2>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod. Cras ullamcorper a odio non rutrum.</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod.</p>
       </div>
     )
   }

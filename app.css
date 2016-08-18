@@ -1,12 +1,58 @@
-@media screen and (min-width: 200px) {
+/*this is tablet size */
+@media screen and (min-width:1024px) {
 @-ms-viewport {
-  xwidth: 700px;
+  width: 1024px;
 }
-@viewport {
-  xwidth: 700px;
+.movieListing .movieSection{
+    padding-right: 126px;
 }
 
+#page .topSection{
+    height: 424px;
+    
 }
+#page .heroBox{
+    height: 296px;
+}
+#page .moviePlayer{
+    height: 260px;
+    width: 520px;
+}
+}
+/*end tablet size */
+
+
+/*this is Xbox size */
+@media screen and (min-width:1280px) {
+@-ms-viewport {
+  width: 1280px;
+}
+.movieListing .movieSection{
+    padding-right: 0;
+}
+}
+/*end Xbox size */
+
+
+
+
+
+/*this is the desktoop size */
+@media screen and (min-width:1366px) {
+@-ms-viewport {
+  width: 1366px;
+}
+.movieListing .movieSection{
+    padding-right: 146px;
+}
+}
+/*END desktoop size */
+
+
+
+
+
+
 body{
     background-color: #1F213A;
     color: white;
@@ -78,11 +124,15 @@ body{
     display: block;
 }
 .heroBox .controls{
-    width:20em;
+    width:29em;
     margin-bottom:30px;
 }
 .controls h1{
     margin-bottom:20px;
+    font-size: 34pt;    
+}
+.controls span{
+    font-size: 1.2em;
 }
 .bottomSection{
     flex-grow: 1;
@@ -129,7 +179,7 @@ body{
 .playMovie {
     padding-bottom: 44px;
     padding-top: 140px;
-  padding: 140px 140px 44px 64px;
+  padding: 140px 100px 44px 64px;
     xheight: 25em;
     display: flex;
 }
@@ -143,7 +193,8 @@ body{
     
 }
 .movieText {
-   margin: 0 56px;
+   margin: 0 0 0 56px;
+   font-size: 10pt;
    
 }
 
@@ -153,7 +204,7 @@ body{
 
 .movieText p {
     margin-bottom: 20px;
-    text-align: justify; 
+    xtext-align: justify; 
 }
 .movieText .playInfo {
     text-align: left;
@@ -176,6 +227,7 @@ body{
 .additionalDetailWrapper .lowerDetailsWrapper {
     display: flex;
     flex-flow: row;
+    font-size: 10pt;
     
 }
 .detailBlock {
