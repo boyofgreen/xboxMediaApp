@@ -234,7 +234,7 @@ body{
 }
 .controls button{
     
- font-family: "Segoe UI"
+ font-family: 'SegoeMDL2';
 }
 .controls button:focus{
     outline: none;

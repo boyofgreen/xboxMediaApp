@@ -161,11 +161,61 @@ var MovieListing = React.createClass({
   }
 });
 
+class MoviePlayer extends React.Component {
+  constructor() {
+    super();
+   };
+  componentDidMount(){
+
+    initializePlayer()
+  
+  }
+  render(){
+    return(
+      <div id="videoContainer" className="center-content">
+ 	      <video id="myVideo" controls="true" width="760" height="380" autoPlay>
+ 		      <source src="testvid.mp4" type="video/mp4"></source>
+ 	      </video>
+	<div id="videoControls" className="controls">
+		
+		<div className="col span-12 center-content">
+			<input id="seekSlider" type="range" min="0" max="100" defaultValue="0" step="1" />
+		</div>
+		
+		<div className="col span-12 center-content">
+			<div className="col span-6 left-controls">
+				<span id="curTimeText">0:00:00</span>
+			</div>
+			<div className="col span-6 right-controls">
+				<span id="remTimeText">-0:00:00</span>
+			</div>
+		</div> 
+
+
+		<div className="col span-12 center-controls">
+			<button id="closeCaptionBtn" className="iconfont">&#xEC15;</button>
+			<button id="aspRatioBtn" className="iconfont">&#xE799;</button>
+			<button id="playPauseBtn" className="iconfont">&#xE769;</button>
+			<button id="volumeBtn" className="iconfont">&#xE15D;</button>
+			<button id="fullscreenBtn" className="iconfont">&#xE1D9;</button>
+		</div>
+	</div>
+	<div id="volumeModal">
+		<button id="muteBtn" className="iconfont">&#xE15D;</button>
+		<input id="volumeSlider" className="iconfont" type="range" min="0" max="100" defaultValue="100" step="1" />
+	</div>
+</div>
+      
+    )}
+};
+
 var PlayMovie = React.createClass({
   render: function(){
+    //<div className="moviePlayer" style={{backgroundImage: 'url('+this.props.data.imgUrl+')'}}></div>
+    
     return(
       <div className="playMovie">
-        <div className="moviePlayer" style={{backgroundImage: 'url('+this.props.data.imgUrl+')'}}></div>
+        <MoviePlayer />
         <div className="movieText">
             <h2>{this.props.data.title}</h2>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Cras ullamcorper a odio non rutrum.</p>
