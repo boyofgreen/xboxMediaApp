@@ -6,12 +6,7 @@
    
 <link href="//db.onlinewebfonts.com/c/88bdc70ec292cc29451932f9875b378a?family=SegoeUIMonoW01-Regular" rel="stylesheet" type="text/css"/>        <link href="reset.css" rel="stylesheet" type="text/css"  />
     <link href="app.css" rel="stylesheet" type="text/css"  />
-    <script>
-      if(window.Windows && window.Windows.UI && window.Windows.UI.ViewManagement){
-      var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
- applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
-      }
-    </script>
+
     <script src="build/react.js"></script>
     <script src="build/react-dom.js"></script>
     <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
@@ -24,6 +19,12 @@
     <script>
       
       TVJS.DirectionalNavigation.focusableSelectors.push(".movieBox") 
+    </script>
+        <script>
+      if(window.Windows && window.Windows.UI && window.Windows.UI.ViewManagement){
+      var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
+ applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
+      }
     </script>
   </body>
 </html>
