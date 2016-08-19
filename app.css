@@ -33,6 +33,10 @@
 #page .overArrow {
     display: none;
 }
+
+body{
+    margin:-400px;
+}
 }
 
 /*end Xbox size */
