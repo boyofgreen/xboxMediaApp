@@ -17,6 +17,11 @@
       "src": "images/windows-smallsquare-30-30.png",
       "sizes": "30x30"
     },
+        {
+      "src": "images/windows-splashscreen-1240-600.png",
+      "sizes": "1240x600"
+    },
+    
     {
       "src": "images/windows-smallsquare-42-42.png",
       "sizes": "42x42"
