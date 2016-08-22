@@ -6,7 +6,7 @@
   "orientation": "any",
   "name": "South Ridge Video",
   "scope":"/", 
-  "mjs_api_access": [ {   "match": "https://southridge.azurewebsites.net", "apiAccess":"all", "platform": "windows10"  }],
+  "mjs_api_access": [ {   "match": "https://southridge.azurewebsites.net", "access":"all", "platform": "windows10"  }],
  "theme_color":"#2F404B",
   "icons": [
     {
