@@ -3,6 +3,7 @@
     "start_url": "https://southridge.azurewebsites.net",
   "short_name": "SouthRidge",
     "display": "fullscreen",
+  "orientation": "landscape",
   "name": "South Ridge Video",
   "scope":"/", 
   "mjs_api_access": [ {   "match": "https://southridge.azurewebsites.net", "access":"all", "platform": "windows10"  }],
