@@ -8,7 +8,8 @@
   "scope":"/", 
    "mjs_access_whitelist": [
     {
-      "url": "https://southridge.azurewebsites.net"
+      "url": "https://southridge.azurewebsites.net",
+      "apiAccess": "all"
     }
   ],
  "theme_color":"#2F404B",
