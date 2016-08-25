@@ -121,10 +121,11 @@ var MovieBox = React.createClass({
 
 var MovieSection = React.createClass({
   handleClick(e){
-    console.log(e);
-   // document.querySelector('.list').scrollLeft(300)
-    
-    $(e).siblings().animate({ scrollLeft: 900 }, 600);
+   var maxPos = $(e.currentTarget).siblings()[1].scrollWidth-$( e.currentTarget).siblings()[1].clientWidth;
+   var curPos = $(e.currentTarget).siblings()[1].scrollLeft;
+   var distance = $( e.currentTarget).siblings()[1].clientWidth-200;
+    if(curPos >= maxPos) distance = (curPos+distance)*-1;
+    $(e.currentTarget).siblings().animate({ scrollLeft: curPos+distance }, 600);
 
   },
   render: function(){
