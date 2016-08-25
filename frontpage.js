@@ -120,6 +120,13 @@ var MovieBox = React.createClass({
 
 
 var MovieSection = React.createClass({
+  handleClick(e){
+    console.log(e);
+   // document.querySelector('.list').scrollLeft(300)
+    
+    $(e).siblings().animate({ scrollLeft: 900 }, 600);
+
+  },
   render: function(){
    var movieSectionNodes = this.props.data.map(function(data) {
       return (
@@ -134,7 +141,7 @@ var MovieSection = React.createClass({
        <div className="list">
        {movieSectionNodes}
        </div>
-       <button className="overArrow">❯</button>
+       <button onClick={this.handleClick} className="overArrow">❯</button>
       </div>
     )
   }
@@ -174,7 +181,7 @@ class MoviePlayer extends React.Component {
     return(
       <div id="videoContainer" className="moviePlayer">
  	      <video id="myVideo" controls="true" width="100%" height="100%" autoPlay>
- 		      <source src="testvid.mp4" type="video/mp4"></source>
+ 		      <source src="http://video.ch9.ms/ch9/2f52/44b36f3c-0822-40b1-9926-6771225a2f52/mjsNapol01_high.mp4" type="video/mp4"></source>
  	      </video>
 	<div id="videoControls" className="controls">
 		
