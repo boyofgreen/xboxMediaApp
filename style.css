@@ -1,7 +1,7 @@
 div#videoContainer{
-	width: 760px;
+	xwidth: 100%;
 	background:#000;
-	margin:0px !important;
+	margin:0px;
 	position: relative;
 	bottom: 0%;
 	left: 0%;
@@ -30,7 +30,7 @@ video.scale2{
 	background: #000;
 	position: absolute;
 	width: inherit;
-	height: inherit;
+	height: 40%;
 	bottom: 0%;
 	z-index: 2147483647; /*fix this*/
 }
@@ -64,7 +64,7 @@ video.scale2{
 
 .iconfont {
 	font-family: 'SegoeMDL2';
-	font-size: 25pt;
+	font-size: 25px;
 	background: none;
 	color: white;
 	border: none;
