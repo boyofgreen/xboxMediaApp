@@ -172,8 +172,8 @@ class MoviePlayer extends React.Component {
   }
   render(){
     return(
-      <div id="videoContainer" className="center-content">
- 	      <video id="myVideo" controls="true" width="760" height="380" autoPlay>
+      <div id="videoContainer" className="moviePlayer">
+ 	      <video id="myVideo" controls="true" width="100%" height="100%" autoPlay>
  		      <source src="testvid.mp4" type="video/mp4"></source>
  	      </video>
 	<div id="videoControls" className="controls">
@@ -218,10 +218,12 @@ var PlayMovie = React.createClass({
         <MoviePlayer />
         <div className="movieText">
             <h2>{this.props.data.title}</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Cras ullamcorper a odio non rutrum.</p>
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod.</p>
+            <div className="movieTextWrapper">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Cras ullamcorper a odio non rutrum.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod.</p>
 
-           <p className="playInfo">2008  |  1 hr 51 min</p>
+              <p className="playInfo">2008  |  1 hr 51 min</p>
+           </div>
         </div>
       </div>
     )
