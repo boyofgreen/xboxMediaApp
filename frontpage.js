@@ -90,12 +90,17 @@ var HeroBox = React.createClass({
      currentPlayObj = this.props;
     loadMovieState()
   },
+    handleFocus(){
+    //  window.scrollTo(0,0)
+    //console.log('should be focusing top')
+     $("html, body").animate({ scrollTop: 0 }, 600);
+  },
   render: function() {
     return (
       <div className="heroBox">
       <div className="controls">
             <h1>Galaxy Explorer</h1>
-                <button onClick={this.handleClick} ><span className="arrow-right">▷</span></button>   
+                <button onFocus={this.handleFocus} onClick={this.handleClick} ><span className="arrow-right">▷</span></button>   
         </div>
       </div>
     );
@@ -108,9 +113,10 @@ var MovieBox = React.createClass({
     loadMovieState()
   },
   render: function(){
+    var makeId = "m"+this.props.id
     return(
       <div className="movieBoxContainer">
-        <button className="movieBox" id={this.props.id} title={this.props.title} onClick={this.handleClick} style={{backgroundImage: 'url('+this.props.imgUrl+')'}}><span></span></button>
+        <button className="movieBox" id={makeId} data-tv-focus-right={this.props.focusData} title={this.props.title} onClick={this.handleClick} style={{backgroundImage: 'url('+this.props.imgUrl+')'}}><span></span></button>
         {this.props.title}
       </div>
       
@@ -129,12 +135,29 @@ var MovieSection = React.createClass({
 
   },
   render: function(){
+    var i =0;
+    var leng = this.props.data.length;
    var movieSectionNodes = this.props.data.map(function(data) {
-      return (
+     i++;
+     if(leng == i){
+       leng = leng-1;
+      var pin = "#m"+(data.id-leng);
+      console.log("leng", leng);
+      console.log('data.id', data.id)
+     return (
+        
+          <MovieBox id={data.id} key={data.id} title={data.title} data={data} imgUrl={data.imgUrl} focusData={pin}/>
+        
+      );
+     }else{
+
+             return (
         
           <MovieBox id={data.id} key={data.id} title={data.title} data={data} imgUrl={data.imgUrl} />
         
       );
+     }
+
     });
     return(
       <div className="movieSection" id={this.props.id}>
