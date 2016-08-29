@@ -152,6 +152,7 @@ body{
      font-family: 'SegoeUIMonoW01-Regular';
      touch-action: pan-y;
     -ms-overflow-style: none;
+    overflow-x:hidden;
     
 }
 
