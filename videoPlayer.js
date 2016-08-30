@@ -11,7 +11,8 @@ var vid,
 	volumeModal,
 	muteBtn,
 	volumeSlider,
-	fullscreenBtn;
+	fullscreenBtn,
+	systemMediaControls;
 
 var timer = 4000; //milliseconds for fade timer
 
@@ -58,7 +59,67 @@ function initializePlayer(){
 	window.addEventListener("click",focusOffModal,false);
 	
 	fullscreenBtn.addEventListener("click",toggleFullscreen,false);
+
+	//Add SMTC support
+	if (typeof Windows !== 'undefined') {
+  		systemMediaControls = Windows.Media.SystemMediaTransportControls.getForCurrentView();
+  		systemMediaControls.addEventListener("buttonpressed", systemMediaControlsButtonPressed, false);
+		systemMediaControls.isPlayEnabled = true;
+		systemMediaControls.isPauseEnabled = true;
+		systemMediaControls.isStopEnabled = true;
+
+		systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.closed;
+	}
+
+	//Hookup SMTC functions
+	vid.addEventListener("pause", mediaPaused);
+  	vid.addEventListener("playing", mediaPlaying);
+  	vid.addEventListener("ended", mediaEnded);
 }
+
+//SMTC functions
+function playMedia() {
+  var media = document.getElementById("myVideo");
+  media.play();
+}
+function pauseMedia() {
+  var media = document.getElementById("myVideo");
+  media.pause();
+}
+function stopMedia() {
+  var media = document.getElementById("myVideo");
+  media.pause();
+  media.currentTime = 0;
+}
+
+function systemMediaControlsButtonPressed(eventIn) {
+  var mediaButton = Windows.Media.SystemMediaTransportControlsButton;
+  switch (eventIn.button) {
+    case mediaButton.play:
+      playMedia();
+      break;
+    case mediaButton.pause:
+      pauseMedia();
+      break;
+    case mediaButton.stop:
+      stopMedia();
+      break;
+  }
+}
+
+function mediaPlaying() {
+  // Update the SystemMediaTransportControl state.
+  systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.playing;
+}
+function mediaPaused() {
+  // Update the SystemMediaTransportControl state.
+  systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.paused;
+}
+function mediaEnded() {
+  // Update the SystemMediaTransportControl state.
+  systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.stopped;
+}
+
 
 //window.onload = initializePlayer;
 
