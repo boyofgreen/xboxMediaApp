@@ -1,6 +1,6 @@
 
 {
-    "start_url": "index.html",
+    "start_url": "http://southridge.azurewebsites.net",
   "short_name": "SouthRidge",
     "display": "fullscreen",
   "orientation": "landscape",
