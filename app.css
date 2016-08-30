@@ -149,7 +149,7 @@ body{
 body{
     background-color: #1F213A;
     color: white;
-     font-family: 'SegoeUIMonoW01-Regular';
+     font-family: 'SegoeUIMonoW01-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      touch-action: pan-y;
     -ms-overflow-style: none;
     overflow-x:hidden;
@@ -187,7 +187,7 @@ body{
 .heroBox {
     height: 436px;
     padding: 64px;
-    opacity:.6;
+    opacity:.7;
     background-image:url('http://adx.metulev.com/video/Images/Clean/Large/FeaturedImage_2x1_Image04.jpg');
     background-size: cover;
     background-position: center;
@@ -196,6 +196,10 @@ body{
     justify-content: flex-end;
 
 }
+
+
+
+
 .movieListing{
      display: flex;
 
