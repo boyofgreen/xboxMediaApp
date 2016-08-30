@@ -93,7 +93,7 @@ var HeroBox = React.createClass({
     handleFocus(){
     //  window.scrollTo(0,0)
     //console.log('should be focusing top')
-     $("html, body").animate({ scrollTop: 0 }, 600);
+     $("html, body").animate({ scrollTop: 0 }, 300);
   },
   render: function() {
     return (

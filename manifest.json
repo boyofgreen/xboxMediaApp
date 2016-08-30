@@ -1,6 +1,6 @@
 
 {
-    "start_url": "https://southridge.azurewebsites.net",
+    "start_url": "index.html",
   "short_name": "SouthRidge",
     "display": "fullscreen",
   "orientation": "landscape",
@@ -9,6 +9,10 @@
    "mjs_access_whitelist": [
     {
       "url": "https://southridge.azurewebsites.net",
+      "apiAccess": "all"
+    },
+        {
+      "url": "http://southridge.azurewebsites.net",
       "apiAccess": "all"
     }
   ],
