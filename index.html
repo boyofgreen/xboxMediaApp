@@ -52,8 +52,8 @@
 
         function handleFocusChanging(ev) {
                // console.log(ev)
-                scrollableList = ev.detail.nextFocusElement.parentNode;
-                
+                scrollableList = ev.detail.nextFocusElement.parentNode.parentNode;
+               // console.log('scrollableList', scrollableList)
                 var keyCode = ev.detail.keyCode;
 
                 var nextFocusElement = ev.detail.nextFocusElement;
@@ -63,6 +63,7 @@
                     var nextFocusElementRect = nextFocusElement.getBoundingClientRect();
 
                     var newScrollLeft = -1;
+                    var xScrollPos = 20;
 
                     switch (keyCode) {
 
@@ -83,7 +84,11 @@
                                 var xScrollAmount = -1 * (leftBoundaryToTriggerScrollIntoView - nextFocusElementRect.left);
 
                                 newScrollLeft = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
-
+                                
+                               // console.log('nextFocusElementRect.left', nextFocusElementRect.left)
+                              //  console.log('leftBoundaryToTriggerScrollIntoView', leftBoundaryToTriggerScrollIntoView);
+                                console.log('newScrollLeft', newScrollLeft)
+                                 scrollableList.scrollLeft = newScrollLeft;
                             }
 
                             break;
@@ -104,8 +109,12 @@
 
                                 var xScrollAmount = nextFocusElementRect.right - rightBoundaryToTriggerScrollIntoView;
 
-                                var xScrollPos = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
-
+                                xScrollPos = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
+                                
+                                //         console.log('nextFocusElementRect.right', nextFocusElementRect.right)
+                                // console.log('rightBoundaryToTriggerScrollIntoView', rightBoundaryToTriggerScrollIntoView);
+                                 console.log('xScrollPos', xScrollPos)
+                                 scrollableList.scrollLeft = xScrollPos;
                             }
 
                             break;
@@ -116,23 +125,8 @@
 
                     }
 
-                    if (newScrollLeft) {
-
-                        // Note: If running on Edge or Internet Explorer 11 or higher, we could use the msZoomTo API
-
-                        // to do an animated scroll. For other browsers, you can use CSS transitions.
-
-                        scrollableList.scrollLeft = xScrollPos;
-
-                        ev.preventDefault();
-
-                        // Focus is an expensive operation so it's good to let any processing from scrolling into
-
-                        // view finish first.
 
                         requestAnimationFrame(function () {
-
-                            setTimeout(function () {
 
                                 if (nextFocusElement) {
 
@@ -140,11 +134,9 @@
 
                                 }
 
-                            });
+                    
 
                         });
-
-                    }
 
                 }
 

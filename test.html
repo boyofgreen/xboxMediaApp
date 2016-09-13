@@ -130,7 +130,7 @@
                             // need to scroll the next element into view.
                             if (nextFocusElementRect.left < leftBoundaryToTriggerScrollIntoView) {
                                 // If yes, figure out how much to move scroll the viewport.
-                                var xScrollAmount = -1 * (leftBoundaryToTriggerScrollIntoView - nextFocusElementRect.left);
+                                var xScrollAmount = -2 * (leftBoundaryToTriggerScrollIntoView - nextFocusElementRect.left);
                                 newScrollLeft = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
                             }
                             break;
