@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+         if(navigator.serviceWorker){
+
+
+     //   Register the ServiceWorker
+navigator.serviceWorker.register('service-worker.js', {
+  scope: '.'
+}).then(function(registration) {
+                console.log('The service worker has been registered ', registration);
+});
+
+
+
+// Listen for claiming of our ServiceWorker
+navigator.serviceWorker.addEventListener('controllerchange', function(event) {
+  // Listen for changes in the state of our ServiceWorker
+  navigator.serviceWorker.controller.addEventListener('statechange', function() {
+    // If the ServiceWorker becomes "activated", let the user know they can go offline!
+    if (this.state === 'activated') {
+        alert('you may go offline')
+        //      document.getElementById('offlineNotification').classList.remove('hidden');
+    }
+  });
+});
+
+
+
+         }
+        
+
+
+</script>
     <meta charset="UTF-8" />
     <title>South Ridge Video</title>
    <link href="manifest.json" rel="manifest">
@@ -15,7 +47,7 @@
     </script>
     <script src="build/react.js"></script>
     <script src="build/react-dom.js"></script>
-    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="browser.min.js"></script>
     
   </head>
   <body>
@@ -162,7 +194,7 @@
      
     </script>
     
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+    	<script src="jquery.js"></script>
 	<script src="videoPlayer.js"></script>
 	<script>
   $('.overArrow').click(function(){
