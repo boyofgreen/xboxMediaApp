@@ -204,8 +204,7 @@ class MoviePlayer extends React.Component {
   render(){
     return(
       <div id="videoContainer" className="moviePlayer">
- 	      <video id="myVideo" controls="true" width="100%" height="100%" autoPlay>
- 		      <source src="http://video.ch9.ms/ch9/2f52/44b36f3c-0822-40b1-9926-6771225a2f52/mjsNapol01_high.mp4" type="video/mp4"></source>
+ 	      <video id="myVideo" controls="true" width="100%" height="100%" autoPlay src="https://southridge.azurewebsites.net/smallClip.mp4">
  	      </video>
 	<div id="videoControls" className="controls">
 		
@@ -240,10 +239,31 @@ class MoviePlayer extends React.Component {
     )}
 };
 
-var PlayMovie = React.createClass({
-  render: function(){
-    //<div className="moviePlayer" style={{backgroundImage: 'url('+this.props.data.imgUrl+')'}}></div>
-    
+var playMovethat;
+class PlayMovie extends React.Component {
+  constructor() {
+    super();
+    var that = this;
+    playMovethat = this;
+    this.state = {
+      viewer: 'unknown'
+    }
+        addFiletoCache('checkURL').then(function(result){
+           that.setState({viewer: result.message});
+            console.log('result.message', result.message)
+        })
+   };
+    handleClick() {
+     
+     addFiletoCache('download').then(function(result){
+       playMovethat.setState({viewer: 'downloading'});
+      console.log('result.message', result.message)
+     })
+  }
+  render(){
+    var text = 'make this video offline'
+    if(this.state.viewer == 'inCache') text = '<span class="inCache">this video is already in your cache</span>'
+    if(this.state.viewer == 'downloading') text = '<span class="downloading">this video is downloading now</span>' 
     return(
       <div className="playMovie">
         <MoviePlayer />
@@ -254,12 +274,13 @@ var PlayMovie = React.createClass({
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum ipsum sit amet porta faucibus. Quisque a diam id tellus placerat euismod.</p>
 
               <p className="playInfo">2008  |  1 hr 51 min</p>
+              <p className="downLoad" onClick={this.handleClick}>{text}</p>
            </div>
         </div>
       </div>
     )
   }
-});
+} ;
 
 var PlayMovieDetails = React.createClass({
   render:function(){

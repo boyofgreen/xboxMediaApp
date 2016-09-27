@@ -68,10 +68,11 @@
   <script>
     var myImage = document.querySelector('.my-image');
 
-    fetch('http://clips.vorwaerts-gmbh.de/VfE_html5.mp4').then(function(response) {
+    fetch('http://southridge.azurewebsites.net/smallClip.mp4').then(function(response) {
       response.blob().then(function(myBlob) {
         var objectURL = URL.createObjectURL(myBlob);
         myImage.src = objectURL;
+        console.log('file is done downloading')
       });
       console.log(response.bodyUsed);
     });

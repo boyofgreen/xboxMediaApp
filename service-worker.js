@@ -3,7 +3,7 @@
 var CACHE_NAME = 'dependencies-cache';
 
 // Files required to make this app work offline
-var REQUIRED_FILES = ["jquery.js","index.html","reset.css", "style.css","videoPlayer.js", "manifest.json", "app.css","videoPlayer.js","directionalnavigation-1.0.0.0.js", "build/react.js","build/react-dom.js","browser.min.js", "frontpage.js", "/"];
+var REQUIRED_FILES = ["jquery.js","index.html","reset.css", "style.css","videoPlayer.js", "manifest.json", "app.css","videoPlayer.js","directionalnavigation-1.0.0.0.js", "build/react.js","build/react-dom.js","browser.min.js", "frontpage.js"];
 
 
 self.addEventListener('install', function(event) {
@@ -48,4 +48,32 @@ self.addEventListener('activate', function(event) {
 
 
 
+self.addEventListener('message', function(event) {
+  console.log(event.data.action);
+if(event.data.action == 'checkURL'){
+
+caches.match(event.data.url).then(function(response){
+  if(response){ return event.ports[0].postMessage({'message': 'inCache'});
+  }else{
+    return event.ports[0].postMessage({'message': 'notCached'});
+  }
+})
+}
+
+if(event.data.action == 'downLoadVideo'){
+
+  caches.open(CACHE_NAME)
+      .then(function(cache) {
+        // Add all offline dependencies to the cache
+        return cache.add(event.data.url);
+      })
+      .then(function() {
+        console.log('#####################VIDEO FILE CACHED')
+      	// At this point everything has been cached
+        return console.log('#####################VIDEO FILE CACHED')//self.skipWaiting();
+      })
+    return event.ports[0].postMessage({'message': 'downloading'});
+
+}
+});
 
