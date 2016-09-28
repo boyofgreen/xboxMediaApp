@@ -99,7 +99,7 @@ var HeroBox = React.createClass({
     return (
       <div className="heroBox">
       <div className="controls">
-            <h1>Galaxy Explorer</h1>
+            <h1>Galaxy Adorer</h1>
                 <button onFocus={this.handleFocus} onClick={this.handleClick} ><span className="arrow-right">▷</span></button>   
         </div>
       </div>
