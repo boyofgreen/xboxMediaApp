@@ -4,6 +4,9 @@
     <script>
          if(navigator.serviceWorker){
 
+Notification.requestPermission().then(function(result) {
+  console.log('premission request result', result);
+});
 
      //   Register the ServiceWorker
 navigator.serviceWorker.register('service-worker.js', {

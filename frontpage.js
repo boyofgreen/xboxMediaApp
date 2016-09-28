@@ -261,9 +261,11 @@ class PlayMovie extends React.Component {
      })
   }
   render(){
-    var text = 'make this video offline'
-    if(this.state.viewer == 'inCache') text = '<span class="inCache">this video is already in your cache</span>'
-    if(this.state.viewer == 'downloading') text = '<span class="downloading">this video is downloading now</span>' 
+    var text = 'save this video for offline'
+    if(this.state.viewer == 'inCache') text = 'this video is available offline!'
+    if(this.state.viewer == 'downloading') text = 'this video is downloading now ...' 
+    if(this.state.viewer == 'noSW') text = ''; 
+    
     return(
       <div className="playMovie">
         <MoviePlayer />

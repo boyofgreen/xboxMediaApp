@@ -68,8 +68,13 @@ if(event.data.action == 'downLoadVideo'){
         return cache.add(event.data.url);
       })
       .then(function() {
-        console.log('#####################VIDEO FILE CACHED')
+       // console.log('#####################VIDEO FILE CACHED')
       	// At this point everything has been cached
+
+        setTimeout(function(){
+          self.registration.showNotification("your file has finished downloading");
+        }, 8000)
+
         return console.log('#####################VIDEO FILE CACHED')//self.skipWaiting();
       })
     return event.ports[0].postMessage({'message': 'downloading'});

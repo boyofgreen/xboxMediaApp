@@ -7,6 +7,10 @@
 
 var addFiletoCache = function(action){
 
+  if(!navigator.serviceWorker){
+     return new Promise(function(resolve, reject) {resolve({message:'noSW'})});
+  }
+
 
 if(action == 'checkURL'){
 
