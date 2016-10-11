@@ -60,22 +60,59 @@
 
 </head>
 <body>
-    <h1>Scroll into view</h1>
+    <h1>Best Image Ever</h1>
 
 
-        <video src="" class="my-image" controls="controls"></video>
-
+        <img src="" class="my-image" controls="controls" />
   <script>
-    var myImage = document.querySelector('.my-image');
 
-    fetch('http://southridge.azurewebsites.net/smallClip.mp4').then(function(response) {
-      response.blob().then(function(myBlob) {
-        var objectURL = URL.createObjectURL(myBlob);
-        myImage.src = objectURL;
-        console.log('file is done downloading')
-      });
-      console.log(response.bodyUsed);
-    });
+
+     //   Register the ServiceWorker
+navigator.serviceWorker.register('testsw.js', {
+  scope: '.'
+}).then(function(registration) {
+                console.log('The service worker has been registered ', registration);
+});
+
+
+    var myImage = document.querySelector('.my-image').src = 'images/test.jpg'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     //   Register the ServiceWorker
+// navigator.serviceWorker.register('testsw.js', {
+//   scope: '.'
+// }).then(function(registration) {
+//                 console.log('The service worker has been registered ', registration);
+// });
+
+
+
+
+
+
+
+    // fetch('images/test.jpg').then(function(response) {
+    //   response.blob().then(function(myBlob) {
+    //     var objectURL = URL.createObjectURL(myBlob);
+    //     myImage.src = objectURL;
+    //     console.log('file is done downloading')
+    //   });
+    //   console.log(response.bodyUsed);
+    // });
 
 </script>
 

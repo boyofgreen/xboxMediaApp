@@ -142,8 +142,8 @@ var MovieSection = React.createClass({
      if(leng == i){
        leng = leng-1;
       var pin = "#m"+(data.id-leng);
-      console.log("leng", leng);
-      console.log('data.id', data.id)
+     // console.log("leng", leng);
+     // console.log('data.id', data.id)
      return (
         
           <MovieBox id={data.id} key={data.id} title={data.title} data={data} imgUrl={data.imgUrl} focusData={pin}/>
