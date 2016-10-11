@@ -1,4 +1,13 @@
 
+/***************
+ * You'll want to start with this content on the page, where we are doing a few things:
+ * 1. identify cache name and array of items to be added to cache
+ * 2. setting up the cache
+ * 3. adding the files from our app into the cache
+ * 
+ * remember, this happens inside the "install" event so it doesn't run eveyr time page is loaded, only when the SW is being installed
+ */
+
 
 var CACHE_NAME = 'dependencies-cache';
 
@@ -21,6 +30,16 @@ self.addEventListener('install', function(event) {
   );
 });
 
+
+
+/*************
+ * this part you will code in yourself :
+ * 1. set up an event listener (self.addEventListnener), self is the "document" of the service Worker
+ * 2.set promise on event (respondWith)
+ * 3.check to see if response is in cache
+ * 4.conditionally respond from cache or from server
+ */
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
@@ -40,45 +59,13 @@ self.addEventListener('fetch', function(event) {
 });
 
 
+
+
+
+
+
+
 self.addEventListener('activate', function(event) {
-  // Calling claim() to force a "controllerchange" event on navigator.serviceWorker
+  // Calling claim() to force a "controllerchange" event on navigator.serviceWorker, alert will be fired on main page when event bubbels up
   event.waitUntil(self.clients.claim());
 });
-
-
-
-
-self.addEventListener('message', function(event) {
-  console.log(event.data.action);
-if(event.data.action == 'checkURL'){
-
-caches.match(event.data.url).then(function(response){
-  if(response){ return event.ports[0].postMessage({'message': 'inCache'});
-  }else{
-    return event.ports[0].postMessage({'message': 'notCached'});
-  }
-})
-}
-
-if(event.data.action == 'downLoadVideo'){
-
-  caches.open(CACHE_NAME)
-      .then(function(cache) {
-        // Add all offline dependencies to the cache
-        return cache.add(event.data.url);
-      })
-      .then(function() {
-       // console.log('#####################VIDEO FILE CACHED')
-      	// At this point everything has been cached
-
-        setTimeout(function(){
-          self.registration.showNotification("your file has finished downloading");
-        }, 8000)
-
-        return console.log('#####################VIDEO FILE CACHED')//self.skipWaiting();
-      })
-    return event.ports[0].postMessage({'message': 'downloading'});
-
-}
-});
-

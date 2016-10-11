@@ -2,13 +2,13 @@
 <html>
   <head>
     <script>
+
+        //important to feature detect to make sure we only run for UA that support service workers
          if(navigator.serviceWorker){
 
-Notification.requestPermission().then(function(result) {
-  console.log('premission request result', result);
-});
 
      //   Register the ServiceWorker
+     //   set the scope to the entire domain
 navigator.serviceWorker.register('service-worker.js', {
   scope: '.'
 }).then(function(registration) {
