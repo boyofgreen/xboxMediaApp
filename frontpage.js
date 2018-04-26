@@ -3,72 +3,72 @@
  
  var data = [
    {section:"recently released", id:"A", movies:[
-   {title:"Movie 1", id:1, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image09.jpg"},
-   {title:"Movie 1", id:2, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image14.jpg"},
-   {title:"Movie 1", id:3, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image19.jpg"},
-   {title:"Movie 1", id:4, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image26.jpg"},
-   {title:"Movie 1", id:5, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image21.jpg"},
-   {title:"Movie 1", id:6, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image29.jpg"},
-   {title:"Movie 1", id:7, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image39.jpg"},
-   {title:"Movie 1", id:8, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image27.jpg"},
-   {title:"Movie 1", id:9, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image15.jpg"},
-   {title:"Movie 1", id:10, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image11.jpg"},
+   {title:"Movie 1", id:1, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image09.jpg"},
+   {title:"Movie 1", id:2, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image14.jpg"},
+   {title:"Movie 1", id:3, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image19.jpg"},
+   {title:"Movie 1", id:4, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image26.jpg"},
+   {title:"Movie 1", id:5, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image21.jpg"},
+   {title:"Movie 1", id:6, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image29.jpg"},
+   {title:"Movie 1", id:7, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image39.jpg"},
+   {title:"Movie 1", id:8, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image27.jpg"},
+   {title:"Movie 1", id:9, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image15.jpg"},
+   {title:"Movie 1", id:10, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image11.jpg"},
  ]},
  {section:"Adventures", id:"B",movies:[
-   {title:"Movie 1", id:11, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image06.jpg"},
-   {title:"Movie 1", id:12, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image40.jpg"},
-   {title:"Movie 1", id:13, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image32.jpg"},
-   {title:"Movie 1", id:14, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image28.jpg"},
-   {title:"Movie 1", id:15, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image49.jpg"},
-   {title:"Movie 1", id:16, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeaturedImage_2x1_Image03.jpg"},
-   {title:"Movie 1", id:17, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image10.jpg"},
-   {title:"Movie 1", id:18, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image19.jpg"},
-   {title:"Movie 1", id:19, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
-   {title:"Movie 1", id:20, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image09.jpg"}
+   {title:"Movie 1", id:11, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image06.jpg"},
+   {title:"Movie 1", id:12, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image40.jpg"},
+   {title:"Movie 1", id:13, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image32.jpg"},
+   {title:"Movie 1", id:14, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image28.jpg"},
+   {title:"Movie 1", id:15, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image49.jpg"},
+   {title:"Movie 1", id:16, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeaturedImage_2x1_Image03.jpg"},
+   {title:"Movie 1", id:17, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image10.jpg"},
+   {title:"Movie 1", id:18, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image19.jpg"},
+   {title:"Movie 1", id:19, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
+   {title:"Movie 1", id:20, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image09.jpg"}
    
  ]},
  {section:"People",id:"C", movies:[
-   {title:"Movie 1", id:21, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image13.jpg"},
-   {title:"Movie l", id:22, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image16.jpg"},
-   {title:"Movie k", id:23, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image17.jpg"},
-   {title:"Movie l", id:24, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
-   {title:"Movie k", id:25, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image07.jpg"},
-   {title:"Movie a", id:26, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image19.jpg"},
-   {title:"Movie b", id:27, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image14.jpg"},
-   {title:"Movie c", id:28, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image08.jpg"},
-   {title:"Movie d", id:29, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image28.jpg"},
-   {title:"Movie e", id:30, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image27.jpg"}
+   {title:"Movie 1", id:21, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image13.jpg"},
+   {title:"Movie l", id:22, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image16.jpg"},
+   {title:"Movie k", id:23, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image17.jpg"},
+   {title:"Movie l", id:24, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
+   {title:"Movie k", id:25, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image07.jpg"},
+   {title:"Movie a", id:26, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image19.jpg"},
+   {title:"Movie b", id:27, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image14.jpg"},
+   {title:"Movie c", id:28, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image08.jpg"},
+   {title:"Movie d", id:29, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image28.jpg"},
+   {title:"Movie e", id:30, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image27.jpg"}
  ]},
  {section:"The Great Outdoors",id:"D", movies:[
-   {title:"Movie k", id:31, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image48.jpg"},
-   {title:"Movie l", id:32, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image34.jpg"},
-   {title:"Movie k", id:33, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
-   {title:"Movie l", id:34, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image08.jpg"},
-   {title:"Movie k", id:35, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image18.jpg"},
-   {title:"Movie a", id:36, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image25.jpg"},
-   {title:"Movie b", id:37, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image26.jpg"},
-   {title:"Movie c", id:38, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image09.jpg"},
-   {title:"Movie d", id:39, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image27.jpg"},
-   {title:"Movie e", id:40, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image28.jpg"}
+   {title:"Movie k", id:31, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image48.jpg"},
+   {title:"Movie l", id:32, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image34.jpg"},
+   {title:"Movie k", id:33, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
+   {title:"Movie l", id:34, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image08.jpg"},
+   {title:"Movie k", id:35, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image18.jpg"},
+   {title:"Movie a", id:36, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image25.jpg"},
+   {title:"Movie b", id:37, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image26.jpg"},
+   {title:"Movie c", id:38, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image09.jpg"},
+   {title:"Movie d", id:39, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image27.jpg"},
+   {title:"Movie e", id:40, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image28.jpg"}
  ]},
  {section:"Kids",id:"E", movies:[
-   {title:"Movie k", id:41, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image37.jpg"},
-   {title:"Movie l", id:42, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image45.jpg"},
-   {title:"Movie k", id:43, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image12.jpg"},
-   {title:"Movie l", id:44, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image59.jpg"},
-   {title:"Movie k", id:45, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image24.jpg"},
-   {title:"Movie a", id:46, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image13.jpg"},
-   {title:"Movie b", id:47, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image21.jpg"},
-   {title:"Movie c", id:48, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
-   {title:"Movie d", id:49, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image23.jpg"},
-   {title:"Movie e", id:50, imgUrl:"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image24.jpg"}
+   {title:"Movie k", id:41, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image37.jpg"},
+   {title:"Movie l", id:42, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image45.jpg"},
+   {title:"Movie k", id:43, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image12.jpg"},
+   {title:"Movie l", id:44, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image59.jpg"},
+   {title:"Movie k", id:45, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image24.jpg"},
+   {title:"Movie a", id:46, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image13.jpg"},
+   {title:"Movie b", id:47, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image21.jpg"},
+   {title:"Movie c", id:48, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image22.jpg"},
+   {title:"Movie d", id:49, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image23.jpg"},
+   {title:"Movie e", id:50, imgUrl:"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image24.jpg"}
  ]}
    ]
    
  //custom events
  var loadMoviePage = new CustomEvent('loadMoviePage');
  var playMovieFullScreen = new CustomEvent('playMovieFullScreen');
- var currentPlayObj = {title:'Galaxy Explorer', imgUrl:'http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image04.jpg'};
+ var currentPlayObj = {title:'Galaxy Explorer', imgUrl:'http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image04.jpg'};
  
   var initStateObj = { state: "frontPage" };
 history.pushState(initStateObj, "page 2", "#frontPage");
@@ -339,7 +339,7 @@ class TopSection extends React.Component {
    if (this.state.viewer === 'frontPage'){
           return(
       <div className="topSection" >
-      <HeroBox title={"Galaxy Explorer"} id={0} imgUrl={"http://adx.azureedge.net/Images/Clean/Small/FeatureImage_2x1_Image04.jpg"} />
+      <HeroBox title={"Galaxy Explorer"} id={0} imgUrl={"http://adx.metulev.com/video/Images/Clean/Small/FeatureImage_2x1_Image04.jpg"} />
       </div>
     )
     }else{
