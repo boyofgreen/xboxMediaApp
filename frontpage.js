@@ -394,7 +394,7 @@ var LogoBox = React.createClass({
   render: function() {
     return (
       <div className="logoBox">
-      <img src="https://srimages.azurewebsites.net/video/Logo/Logo_NoText.png" className="logo" />
+      <img src="https://srimages.azurewebsites.net/Logo/Logo_NoText.png" className="logo" />
       <div>Film</div>
       <div>Broadcast</div>
       <div>Commercials</div>
