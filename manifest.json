@@ -1,21 +1,11 @@
 
 {
-    "start_url": "http://southridge.azurewebsites.net",
+    "start_url": "https://southridge.azurewebsites.net",
   "short_name": "SouthRidge",
     "display": "fullscreen",
   "orientation": "landscape",
   "name": "South Ridge Video",
   "scope":"/", 
-   "mjs_access_whitelist": [
-    {
-      "url": "https://southridge.azurewebsites.net",
-      "apiAccess": "all"
-    },
-        {
-      "url": "http://southridge.azurewebsites.net",
-      "apiAccess": "all"
-    }
-  ],
  "theme_color":"#2F404B",
   "icons": [
     {
