@@ -288,6 +288,7 @@ body{
     align-content: flex-start;
     
 }
+.movieBoxContainer:last-child { padding-right: 200px;}
 
 .playMovie {
     padding-bottom: 44px;
@@ -359,8 +360,6 @@ body{
     border: 0;
     font-size: 18px;
 }
-
-
 
 /*webkit scroll bars  */
 

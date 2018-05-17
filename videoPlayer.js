@@ -48,6 +48,7 @@ function initializePlayer(){
 	//event listeners for buttons
 	vid.addEventListener("mouseover",showControls,false);
 	videoControls.addEventListener("mouseover",controlTimerReset,false);
+	document.body.addEventListener("keydown",showControls,false);
 	playPauseBtn.addEventListener("click",playPause,false);
 	seekSlider.addEventListener("change",vidSeek,false);
 	vid.addEventListener("timeupdate",seekTimeUpdate,false);
@@ -69,13 +70,15 @@ function initializePlayer(){
 		systemMediaControls.isStopEnabled = true;
 
 		systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.closed;
-	
+
 
 	//Hookup SMTC functions
 	vid.addEventListener("pause", mediaPaused);
   	vid.addEventListener("playing", mediaPlaying);
   	vid.addEventListener("ended", mediaEnded);
-	}
+
+	  	}
+
 }
 
 //SMTC functions

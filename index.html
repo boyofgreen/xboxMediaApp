@@ -59,6 +59,7 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     <script src="directionalnavigation-1.0.0.0.js"></script>
     <script>
        TVJS.DirectionalNavigation.focusableSelectors.push(".movieBox") ;
+       TVJS.DirectionalNavigation.focusableSelectors.push(".controls .iconfont") ;
         // We set up two boundaries. This means that if the focused element is not at least 200 pixels from
 
         // the edge of the screen, then we will scroll the viewport so that it is.
@@ -67,7 +68,13 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
         var rightBoundaryToTriggerScrollIntoView = document.body.offsetWidth - 200;
 
+        var topBoundaryToTriggerScrollIntoView = 100
+
+        var bottomBoundaryToTriggerScrollIntoView = document.body.offsetHeight - 100;
+
         var scrollableList = document.body;
+
+        var bodyScroll = document.body
 
 
 
@@ -78,6 +85,10 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
             leftBoundaryToTriggerScrollIntoView = 200;
 
             rightBoundaryToTriggerScrollIntoView = document.body.offsetWidth - 200;
+            
+         topBoundaryToTriggerScrollIntoView = 100
+
+         bottomBoundaryToTriggerScrollIntoView = document.body.offsetHeight - 100;
 
         };
 
@@ -87,8 +98,8 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
         function handleFocusChanging(ev) {
                // console.log(ev)
-                scrollableList = ev.detail.nextFocusElement.parentNode;
-                
+                scrollableList = ev.detail.nextFocusElement.parentNode.parentNode;
+               // console.log('scrollableList', scrollableList)
                 var keyCode = ev.detail.keyCode;
 
                 var nextFocusElement = ev.detail.nextFocusElement;
@@ -98,6 +109,8 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
                     var nextFocusElementRect = nextFocusElement.getBoundingClientRect();
 
                     var newScrollLeft = -1;
+                    var xScrollPos = 20;
+                    var yScrollPos = 20;
 
                     switch (keyCode) {
 
@@ -118,7 +131,11 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
                                 var xScrollAmount = -1 * (leftBoundaryToTriggerScrollIntoView - nextFocusElementRect.left);
 
                                 newScrollLeft = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
-
+                                
+                               // console.log('nextFocusElementRect.left', nextFocusElementRect.left)
+                              //  console.log('leftBoundaryToTriggerScrollIntoView', leftBoundaryToTriggerScrollIntoView);
+                                console.log('newScrollLeft', newScrollLeft)
+                                 scrollableList.scrollLeft = newScrollLeft; 
                             }
 
                             break;
@@ -139,8 +156,66 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
                                 var xScrollAmount = nextFocusElementRect.right - rightBoundaryToTriggerScrollIntoView;
 
-                                var xScrollPos = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
+                                xScrollPos = Math.max(0, scrollableList.scrollLeft + xScrollAmount);
+                                
+                                //         console.log('nextFocusElementRect.right', nextFocusElementRect.right)
+                                // console.log('rightBoundaryToTriggerScrollIntoView', rightBoundaryToTriggerScrollIntoView);
+                                 console.log('xScrollPos', xScrollPos)
+                                 scrollableList.scrollLeft = xScrollPos;
+                            }
 
+                            break;
+
+                        case 38: // up arrow
+
+                        case 203: // Gamepad DPad up
+
+                        case 211: // Gamepad left thumbstick up
+
+                            // Figure out if focus is about to move past the right boundary and we
+
+                            // need to scroll the next element into view.
+
+                            if (nextFocusElementRect.top < topBoundaryToTriggerScrollIntoView) {
+
+                                // If yes, figure out how much to move scroll the viewport.
+
+                                var yScrollAmount = nextFocusElementRect.top - topBoundaryToTriggerScrollIntoView;
+
+                                yScrollPos = Math.max(0, bodyScroll.scrollTop + yScrollAmount);
+                                
+                                //         console.log('nextFocusElementRect.right', nextFocusElementRect.right)
+                                // console.log('rightBoundaryToTriggerScrollIntoView', rightBoundaryToTriggerScrollIntoView);
+                                 console.log('yScrollPos', yScrollPos)
+                                 bodyScroll.scrollTop = yScrollPos; //scrollTo??????????????
+                            }
+
+                            break;
+
+
+
+                        case 40: // down arrow
+
+                        case 204: // Gamepad DPad down
+
+                        case 212: // Gamepad left thumbstick down
+
+                            // Figure out if focus is about to move past the right boundary and we
+
+                            // need to scroll the next element into view.
+                            bottomBoundaryToTriggerScrollIntoView = window.innerHeight -100;
+                            if (nextFocusElementRect.bottom > bottomBoundaryToTriggerScrollIntoView) {
+
+                                // If yes, figure out how much to move scroll the viewport.
+                                console.log('nextFocusElementRect.bottom', nextFocusElementRect.bottom)
+                                var yScrollAmount = bottomBoundaryToTriggerScrollIntoView - nextFocusElementRect.bottom;
+
+                                yScrollPos = Math.max(0, bodyScroll.scrollTop - yScrollAmount);
+                                
+                                //         console.log('nextFocusElementRect.right', nextFocusElementRect.right)
+                                // console.log('rightBoundaryToTriggerScrollIntoView', rightBoundaryToTriggerScrollIntoView);
+                                 console.log('yScrollPos', yScrollPos)
+                                 bodyScroll.scrollTop = yScrollPos; //scrollTo??????????????
                             }
 
                             break;
@@ -151,23 +226,8 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
                     }
 
-                    if (newScrollLeft) {
-
-                        // Note: If running on Edge or Internet Explorer 11 or higher, we could use the msZoomTo API
-
-                        // to do an animated scroll. For other browsers, you can use CSS transitions.
-
-                        scrollableList.scrollLeft = xScrollPos;
-
-                        ev.preventDefault();
-
-                        // Focus is an expensive operation so it's good to let any processing from scrolling into
-
-                        // view finish first.
 
                         requestAnimationFrame(function () {
-
-                            setTimeout(function () {
 
                                 if (nextFocusElement) {
 
@@ -175,11 +235,9 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
                                 }
 
-                            });
+                    
 
                         });
-
-                    }
 
                 }
 
