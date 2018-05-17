@@ -76,7 +76,9 @@ function initializePlayer(){
 	vid.addEventListener("pause", mediaPaused);
   	vid.addEventListener("playing", mediaPlaying);
   	vid.addEventListener("ended", mediaEnded);
+
 	  	}
+
 }
 
 //SMTC functions
