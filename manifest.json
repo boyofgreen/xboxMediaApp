@@ -65,28 +65,8 @@
       "sizes": "50x50"
     },
     {
-      "src": "images/windowsphone-appicon-106-106.png",
-      "sizes": "106x106"
-    },
-    {
-      "src": "images/windowsphone-appicon-62-62.png",
-      "sizes": "62x62"
-    },
-    {
       "src": "images/windowsphone-appicon-44-44.png",
       "sizes": "44x44"
-    },
-    {
-      "src": "images/windowsphone-mediumtile-360-360.png",
-      "sizes": "360x360"
-    },
-    {
-      "src": "images/windowsphone-mediumtile-210-210.png",
-      "sizes": "210x210"
-    },
-    {
-      "src": "images/windowsphone-mediumtile-150-150.png",
-      "sizes": "150x150"
     },
     {
       "src": "images/windowsphone-storelogo-70-70.png",
