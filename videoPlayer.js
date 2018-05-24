@@ -17,70 +17,6 @@ var vid,
 var timer = 4000; //milliseconds for fade timer
 
 
-function initializePlayer(){
-	//Set high level references
-	vid = document.getElementById("myVideo");
-	videoContainer = document.getElementById("videoContainer");
-	videoControls = document.getElementById("videoControls");
-	
-	//replace native video controls with custom
-	vid.controls = false;
-	videoControls.style.display = 'block';
-	controlsTimer = setTimeout(function() {
-		$('#videoControls').fadeOut('slow');
-		$('#volumeModal').fadeOut('slow');
-	}, timer);
-
-	//define button references
-	playPauseBtn = document.getElementById("playPauseBtn");
-	seekSlider = document.getElementById("seekSlider");
-	curTimeText = document.getElementById("curTimeText");
-	remTimeText = document.getElementById("remTimeText");
-	aspRatioBtn = document.getElementById("aspRatioBtn");
-	volumeBtn = document.getElementById("volumeBtn");
-	volumeModal = document.getElementById("volumeModal");
-	muteBtn = document.getElementById("muteBtn");
-	volumeSlider = document.getElementById("volumeSlider");
-	fullscreenBtn = document.getElementById("fullscreenBtn");
-
-	
-
-	//event listeners for buttons
-	vid.addEventListener("mouseover",showControls,false);
-	videoControls.addEventListener("mouseover",controlTimerReset,false);
-	document.body.addEventListener("keydown",showControls,false);
-	playPauseBtn.addEventListener("click",playPause,false);
-	seekSlider.addEventListener("change",vidSeek,false);
-	vid.addEventListener("timeupdate",seekTimeUpdate,false);
-
-	//volume button & modal handlers
-	volumeBtn.addEventListener("click",toggleVolumeModal,false);
-	muteBtn.addEventListener("click",vidMute,false);
-	volumeSlider.addEventListener("change",setVolume,false);
-	window.addEventListener("click",focusOffModal,false);
-	
-	fullscreenBtn.addEventListener("click",toggleFullscreen,false);
-
-	//Add SMTC support
-	if (typeof Windows !== 'undefined') {
-  		systemMediaControls = Windows.Media.SystemMediaTransportControls.getForCurrentView();
-  		systemMediaControls.addEventListener("buttonpressed", systemMediaControlsButtonPressed, false);
-		systemMediaControls.isPlayEnabled = true;
-		systemMediaControls.isPauseEnabled = true;
-		systemMediaControls.isStopEnabled = true;
-
-		systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.closed;
-
-
-	//Hookup SMTC functions
-	vid.addEventListener("pause", mediaPaused);
-  	vid.addEventListener("playing", mediaPlaying);
-  	vid.addEventListener("ended", mediaEnded);
-
-	  	}
-
-}
-
 //SMTC functions
 function playMedia() {
   var media = document.getElementById("myVideo");
@@ -273,4 +209,104 @@ function focusOffModal(event) {
 		&& event.target != volumeSlider)  { //if its open, close it
 		$("#volumeModal").fadeOut('slow');
 	}
+}
+
+
+
+
+function initializePlayer(){
+	//Set high level references
+	vid = document.getElementById("myVideo");
+	videoContainer = document.getElementById("videoContainer");
+	videoControls = document.getElementById("videoControls");
+	
+	//replace native video controls with custom
+	vid.controls = false;
+	videoControls.style.display = 'block';
+	controlsTimer = setTimeout(function() {
+		$('#videoControls').fadeOut('slow');
+		$('#volumeModal').fadeOut('slow');
+	}, timer);
+
+	//define button references
+	playPauseBtn = document.getElementById("playPauseBtn");
+	seekSlider = document.getElementById("seekSlider");
+	curTimeText = document.getElementById("curTimeText");
+	remTimeText = document.getElementById("remTimeText");
+	aspRatioBtn = document.getElementById("aspRatioBtn");
+	volumeBtn = document.getElementById("volumeBtn");
+	volumeModal = document.getElementById("volumeModal");
+	muteBtn = document.getElementById("muteBtn");
+	volumeSlider = document.getElementById("volumeSlider");
+	fullscreenBtn = document.getElementById("fullscreenBtn");
+
+	
+
+	//event listeners for buttons
+	vid.addEventListener("mouseover",showControls,false);
+	videoControls.addEventListener("mouseover",controlTimerReset,false);
+	document.body.addEventListener("keydown",showControls,false);
+	playPauseBtn.addEventListener("click",playPause,false);
+	seekSlider.addEventListener("change",vidSeek,false);
+	vid.addEventListener("timeupdate",seekTimeUpdate,false);
+
+	//volume button & modal handlers
+	volumeBtn.addEventListener("click",toggleVolumeModal,false);
+	muteBtn.addEventListener("click",vidMute,false);
+	volumeSlider.addEventListener("change",setVolume,false);
+	window.addEventListener("click",focusOffModal,false);
+	
+	fullscreenBtn.addEventListener("click",toggleFullscreen,false);
+
+	//Add SUpport for windows apis
+	if (typeof Windows !== 'undefined') {
+		document.getElementById('miniPlayer').style.display = "";
+		document.getElementById('closeCaptionBtn').style.display = "";
+		
+
+  		systemMediaControls = Windows.Media.SystemMediaTransportControls.getForCurrentView();
+  		systemMediaControls.addEventListener("buttonpressed", systemMediaControlsButtonPressed, false);
+		systemMediaControls.isPlayEnabled = true;
+		systemMediaControls.isPauseEnabled = true;
+		systemMediaControls.isStopEnabled = true;
+
+		systemMediaControls.playbackStatus = Windows.Media.MediaPlaybackStatus.closed;
+
+
+	//Hookup SMTC functions
+	vid.addEventListener("pause", mediaPaused);
+  	vid.addEventListener("playing", mediaPlaying);
+	vid.addEventListener("ended", mediaEnded);
+	  
+	function toggleCompactOverlayMode(forceCompactOverlay = false) {
+		if(!window.Windows) return Promise.resolve("unsupported");
+	
+		var applicationView = Windows.UI.ViewManagement.ApplicationView;
+		var currentMode = applicationView.getForCurrentView().viewMode;
+	
+		var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
+			? Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay
+			: Windows.UI.ViewManagement.ApplicationViewMode.default;
+	
+		return applicationView.getForCurrentView()
+			.tryEnterViewModeAsync(newMode)
+			.then(() => newMode);
+	}
+
+	var isFUllScreen = false;
+	document.getElementById('closeCaptionBtn').addEventListener('click', function(){
+
+		var forceCompactOverlay = false;
+		setFullscreenData(isFUllScreen);
+		isFUllScreen?isFUllScreen=false:isFUllScreen=true
+		var Promise = toggleCompactOverlayMode(forceCompactOverlay);
+
+	})
+
+
+
+
+
+	  	}
+
 }

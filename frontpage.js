@@ -223,7 +223,8 @@ class MoviePlayer extends React.Component {
 
 
 		<div className="col span-12 center-controls">
-			<button id="closeCaptionBtn" className="iconfont">&#xEC15;</button>
+			<button id="miniPlayer" className="iconfont" style={{display:'none'}}>&#59275;</button>
+			<button id="closeCaptionBtn" className="iconfont" style={{display:'none'}}>&#xEC15;</button>
 			<button id="aspRatioBtn" className="iconfont">&#xE799;</button>
 			<button id="playPauseBtn" className="iconfont">&#xE769;</button>
 			<button id="volumeBtn" className="iconfont">&#xE15D;</button>
