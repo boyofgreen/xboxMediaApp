@@ -297,8 +297,16 @@ function initializePlayer(){
 	document.getElementById('closeCaptionBtn').addEventListener('click', function(){
 
 		var forceCompactOverlay = false;
-		setFullscreenData(true);
-		isFUllScreen?isFUllScreen=false:isFUllScreen=true
+		//setFullscreenData(true);
+		if(!isFUllScreen){
+			document.getElementById('videoContainer').classList.add('tempFUll')
+			isFUllScreen == true;
+		}else{
+			document.getElementById('videoContainer').classList.remove('tempFUll');
+			isFUllScreen == false;
+			
+			
+		}
 		var Promise = toggleCompactOverlayMode(forceCompactOverlay);
 
 	})
