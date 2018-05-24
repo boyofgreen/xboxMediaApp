@@ -294,7 +294,7 @@ function initializePlayer(){
 	}
 
 	var isFUllScreen = false;
-	document.getElementById('closeCaptionBtn').addEventListener('click', function(){
+	document.getElementById('miniPlayer').addEventListener('click', function(){
 
 		var forceCompactOverlay = false;
 		//setFullscreenData(true);
