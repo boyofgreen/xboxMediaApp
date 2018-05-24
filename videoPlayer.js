@@ -297,7 +297,7 @@ function initializePlayer(){
 	document.getElementById('closeCaptionBtn').addEventListener('click', function(){
 
 		var forceCompactOverlay = false;
-		setFullscreenData(isFUllScreen);
+		setFullscreenData(true);
 		isFUllScreen?isFUllScreen=false:isFUllScreen=true
 		var Promise = toggleCompactOverlayMode(forceCompactOverlay);
 
